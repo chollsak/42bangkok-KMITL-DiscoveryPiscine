@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Balloon</title>
+  <style>
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      transition: all 0.3s ease; 
+      cursor: pointer;
+    }
+
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="balloon" onclick="expandBalloon()" onmouseover="shrinkBalloon()" onmouseout="resetBalloon()"></div>
+
+  <script>
+    let balloonSize = 200;
+    let colorIndex = 0;
+
+    function expandBalloon() {
+      if (balloonSize <= 420) {
+        balloonSize += 10;
+        colorIndex = (colorIndex + 1) % 3;
+        updateBalloon();
+      } else {
+        balloonSize = 200; 
+        colorIndex = 0;
+        updateBalloon();
+      }
+    }
+
+    function shrinkBalloon() {
+      if (balloonSize > 200) {
+        balloonSize -= 5;
+        colorIndex = (colorIndex + 2) % 3; 
+        updateBalloon();
+      }
+    }
+
+    function resetBalloon() {
+
+      colorIndex = 0;
+      updateBalloon();
+    }
+
+    function updateBalloon() {
+      const colors = ['red', 'green', 'blue'];
+      const balloon = document.getElementById('balloon');
+      balloon.style.width = `${balloonSize}px`;
+      balloon.style.height = `${balloonSize}px`;
+      balloon.style.backgroundColor = colors[colorIndex];
+    }
+  </script>
+
+</body>
+</html>

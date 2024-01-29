@@ -1,0 +1,59 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .parallax1, .parallax2 {
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .parallax1 {
+    /* The first image */
+    background-image: url('https://www.reconnectwithnature.org/getmedia/ad4f644a-3620-4023-8291-2458aba65cbd/Sunset-Lake-Renwick-Heron-Rookery-Chris-Cheng-July-2019-7.jpg?width=2000&height=1296&ext=.jpg');
+  }
+
+  #text1{
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+  }
+  
+#text2{
+    position: relative;
+    top: 225px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    
+}
+
+#text3{
+    position: relative;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    top: 50%;
+    left: 49%;
+    
+}
+
+  .parallax2 {
+    /* The second image */
+    background-image: url('https://huntingfield.com/wp-content/uploads/2021/02/best-sunsets-on-the-Maryland-Eastern-Shore-1024x683.png');
+  }
+  
+  .section {
+    height: 500px;
+    background-color: black;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+  }

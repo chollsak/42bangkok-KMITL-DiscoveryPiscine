@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="leftOperand">Left Operand:</label>
+    <input type="text" id="leftOperand" placeholder="Enter a positive integer" />
+
+    <label for="operator">Operator:</label>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="rightOperand">Right Operand:</label>
+    <input type="text" id="rightOperand" placeholder="Enter a positive integer" />
+
+    <input type="button" value="Try me!" onclick="calculate()" />
+
+    <script>
+        function calculate() {
+            var leftOperand = document.getElementById('leftOperand').value;
+            var operator = document.getElementById('operator').value;
+            var rightOperand = document.getElementById('rightOperand').value;
+
+            if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0 || rightOperand.length == 0 || leftOperand.length == 0) {
+                alert('Error :(');
+                return;
+            }
+
+            switch (operator) {
+                case '+':
+                    var result = (parseInt(leftOperand)) + (parseInt(rightOperand));
+                    break;
+                case '-':
+                    var result = (parseInt(leftOperand)) - parseInt(rightOperand);
+                    break;
+                case '*':
+                    var result = (parseInt(leftOperand)) * parseInt(rightOperand);
+                    break;
+                case '/':
+                    if (parseInt(rightOperand) === 0) {
+                        alert("It's over 9000!");
+                        return;
+                    }
+                    var result = (parseInt(leftOperand)) / parseInt (rightOperand);
+                    break;
+                case '%':
+                    if (parseInt(rightOperand) === 0) {
+                        alert("It's over 9000!");
+                        return;
+                    }
+                    var result = (parseInt(leftOperand)) % parseInt (rightOperand);
+                    break;
+                default:
+                    alert('Invalid operator');
+                    return;
+            }
+
+            console.log('Result:', result);
+            alert('Result: ' + result);
+        }
+
+        setInterval(function () {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
